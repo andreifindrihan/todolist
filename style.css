@@ -246,12 +246,6 @@ input:focus + label {
 
 /* MEDIA QUERIES */
 @media screen and (max-width:600px) {
-    body{
-        background: url(Stripe.jpg) no-repeat top center fixed;
-        background-size: 100vmax 100vmax;
-        text-align: center;
-        margin: 0 auto;
-    }
     main {
         width: 350px;
     }
