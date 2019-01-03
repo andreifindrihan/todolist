@@ -19,6 +19,9 @@ main {
     border-radius: 5px;
     text-align: center;
     margin-top: 100px;
+    -webkit-box-shadow: -1px 8px 32px -4px rgba(0,0,0,0.75);
+    -moz-box-shadow: -1px 8px 32px -4px rgba(0,0,0,0.75);
+    box-shadow: -1px 8px 32px -4px rgba(0,0,0,0.75);
 }
 
 .margin {
