@@ -8,6 +8,7 @@
 body {
     background: url(Stripe.jpg);
     background-size: cover;
+    background-repeat: no-repeat;
     text-align: center;
     font-family: 'Source Sans Pro', Helvetica, sans-serif;
 }
