@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <main class="to-do">
+        <!--HEADER-->
+        <header class="grid margin" style="margin-right: 0 !important">
+            <h2 class="title">To Do List</h2>
+            <div>
+                <p>Task counter</p><span class="counter">0</span>
+            </div>
+        </header>
+
+        <!--ADD BUTTON-->
+        <div id="modal-btn" class="add-button">+</div>
+
+        <!--SEPARATOR LINE-->
+        <div id="separator" class="separator"></div>
+
+        <!--LIST EMPTY STATE-->
+        <div class="empty-state">
+            <p>There are no tasks yet.<br />Add one!</p>
+        </div>
+
+        <!--LIST ITEMS-->
+        <div id="new-item" class="list-section">
+            <!-- <div class="grid list margin">
+                <p class="list-item">Walk my dog</p>
+                <p class="hour">12:00 PM</p>
+            </div> -->
+            <!-- <div class="overlay">
+                <a href="#" class="icon" title="User Profile">
+                  <i class="fa fa-trash"></i> 
+                </a>
+            </div> -->
+        </div>
+    </main>
+    <!--MARKUP FOR MODAL-->
+    <div id="simpleModal" class="modal">
+        <div class="modal-content">
+            <span id="dismiss-modal" class="close-btn">&times;</span>
+            <h3>Add a task and desired time</h3>
+            <!--INPUTS-->
+            <div class="row">
+                <input type="text" name="fancy-text" id="input-task"/>
+                <label for="fancy-text">Task</label>
+            </div>
+            <div class="row">
+                <input type="text" name="fancy-text" id="input-time"/>
+                <label for="fancy-text">Time</label>
+            </div>
+            <!--ADD BUTTON-->
+            <button id="add-task" class="btn-add" data-label="Send">Add</button>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
