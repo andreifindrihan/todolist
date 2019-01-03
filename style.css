@@ -247,7 +247,7 @@ input:focus + label {
 /* MEDIA QUERIES */
 @media screen and (max-width:600px) {
     body {
-        background-attachment: scroll;
+        background-repeat: no-repeat;
     }
     main {
         width: 350px;
