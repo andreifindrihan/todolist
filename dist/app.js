@@ -107,9 +107,10 @@ function removeListItem(e) {
     if(e.target.classList.contains('fa')) {
         let task = e.target.parentElement.parentElement.parentElement;
         task.remove();
+        countSubtract();
     };
     
-    countSubtract();
+    
 
     // RETURN EMPTY STATE IF COUNTER IS AT 0
     if(taskCounter.innerHTML === '0') {
