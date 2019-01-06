@@ -112,7 +112,20 @@ header {
 .icon {
     color: #fff;
     font-size: 30px;
-    padding-top: 5px;
+}
+
+.fa-check {
+    margin-left: 50px;
+}
+
+.fa-check:hover {
+    color: #55ec69;
+    transition: .2s ease-in;
+}
+
+.fa-trash:hover {
+    color: #f33100;
+    transition: .2s ease-in;
 }
 
 
