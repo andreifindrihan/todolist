@@ -65,18 +65,34 @@ function addItem() {
     const overlay = document.createElement('div');
     overlay.className += 'overlay';
 
-    // CREATE 'a' tag inside OVERLAY and append it to its parent
+    // CREATE 'a' tag for DELETE inside OVERLAY and append it to its parent
     const deleteBtn = document.createElement('a');
     deleteBtn.className += 'icon';
     deleteBtn.setAttribute('href', '#');
     overlay.appendChild(deleteBtn);
 
-    // CREATE ICON INSIDE THE A TAG AND APPEND IT
+    // CREATE DELETE ICON INSIDE THE A TAG AND APPEND IT
     const deleteIcon = document.createElement('i');
     deleteIcon.className += 'fa fa-trash';
+    deleteIcon.setAttribute('title', 'Delete task');
     deleteBtn.appendChild(deleteIcon);
+
+    // CREATE 'a' tag for EDIT inside OVERLAY and append it to its parent
+    const editButton = document.createElement('a');
+    editButton.className += 'icon';
+    editButton.setAttribute('href', '#');
+    overlay.appendChild(editButton);
+
+    // CREATE EDIT ICON INSIDE THE A TAG AND APPEND IT
+    const editIcon = document.createElement('i');
+    editIcon.className += 'fa fa-check';
+    editIcon.setAttribute('title', 'Mark as done');
+    editButton.appendChild(editIcon);
+
+    // APPEND NEW ITEM
     newItem.appendChild(overlay);
 
+    // UPDATE TASK COUNTER
     countAdd();
 }
 
@@ -104,12 +120,26 @@ function clickOutsideModal(e) {
 
 // DELETE TASK FROM LIST
 function removeListItem(e) {
-    if(e.target.classList.contains('fa')) {
+    if(e.target.classList.contains('fa-trash')) {
         let task = e.target.parentElement.parentElement.parentElement;
         task.remove();
-        
         countSubtract();
     };
+
+    if(e.target.classList.contains('fa-check')) {
+        let checkBtn = document.querySelector('.fa-check');
+        let hour = e.target.parentElement.parentElement.previousSibling;
+        let task = hour.previousSibling;
+
+        // STYLING FOR THE MARKED AS CHECKED TASK
+        task.style.color = 'rgba(0,0,0,0.2)';
+        hour.style.color = 'rgba(0,0,0,0.2)';
+        task.style.textDecoration = "line-through";
+        hour.style.textDecoration = 'line-through';
+        
+        // REMOVE CHECK BUTTON
+        checkBtn.remove();
+    }
 
     // RETURN EMPTY STATE IF COUNTER IS AT 0
     if(taskCounter.innerHTML === '0') {
